@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HexMatrix.gd" type="Script" id=1]
+
+[node name="HexMatrix" type="Node2D"]
+script = ExtResource( 1 )
+side = 8
+xOffset = 200
+yOffset = 200
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_editor_description_": "	"
+}
