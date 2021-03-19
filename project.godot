@@ -8,16 +8,21 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Hex",
+"language": "GDScript",
+"path": "res://assets/scripts/Hex.gd"
+} ]
 _global_script_class_icons={
-
+"Hex": ""
 }
 
 [application]
 
 config/name="PenguimGame"
 run/main_scene="res://assets/Scenes/HexMatrix.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/images/mockup.png"
 
 [rendering]
 

@@ -1,15 +1,35 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://HexMatrix.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/HexMatrix.gd" type="Script" id=1]
+[ext_resource path="res://assets/Scenes/Penguim.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Scenes/CameraNavigation.gd" type="Script" id=3]
+[ext_resource path="res://assets/images/Rectangle.png" type="Texture" id=5]
 
 [node name="HexMatrix" type="Node2D"]
+position = Vector2( 0, -11 )
+z_index = 2
 script = ExtResource( 1 )
-side = 8
-xOffset = 200
-yOffset = 200
+xPosition = 108
+yPosition = 96
+xOffset = 0
+yOffset = 0
+penguimOffset = Vector2( 21, 38 )
+noiseThreshold = -0.15
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2( 0.2, 0.2 )
-__meta__ = {
-"_editor_description_": "	"
-}
+position = Vector2( 253.586, 244.574 )
+current = true
+zoom = Vector2( 0.8, 0.8 )
+script = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0, 0.788235, 1, 1 )
+position = Vector2( -38.6812, -68.9535 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 5 )
